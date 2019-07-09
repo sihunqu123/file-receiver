@@ -1,0 +1,16 @@
+{
+  "name": "file-receiver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js",
+    "start": "node index.js"
+  },
+  "author": "tiantc",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.1"
+  }
+}

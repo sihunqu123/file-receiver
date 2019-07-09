@@ -1,0 +1,23 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: knative-build-demo
+  namespace: default
+spec:
+  runLatest:
+    configuration:
+      build:
+        serviceAccountName: build-bot
+        source:
+          git:
+            url: https://github.com/gswk/knative-helloworld.git
+            revision: master
+        template:
+          name: kaniko
+          arguments:
+          - name: IMAGE
+            value: docker.io/sihunqu123/knative-build-demo:latest
+      revisionTemplate:
+        spec:
+          container:
+            image: docker.io/sihunqu123/knative-build-demo:latest
